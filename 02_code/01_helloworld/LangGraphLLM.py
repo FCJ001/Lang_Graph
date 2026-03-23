@@ -7,13 +7,15 @@ LangGraph的灵魂：State(状态) + Nodes(节点) + Edges(边) + Graph(图)
 
 import uuid
 from typing import TypedDict, Annotated, List
+
+from dotenv import load_dotenv
 from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
 import os
 from langchain.chat_models import init_chat_model
 from langchain_core.messages import HumanMessage
 
-
+load_dotenv(encoding='utf-8')
 # ========== 1. 定义状态（State） ==========
 # 存储对话消息
 class AtguiguState(TypedDict):
